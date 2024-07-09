@@ -87,13 +87,15 @@ export const Home = (randomVerse) => {
 
 
     // Calculate total verses read for Old Testament and New Testament
-    const totalOldTestament1 = groupedProgressData.History.reduce((acc, { totalRange }) => acc + totalRange, 0);
-    const totalOldTestament2 = groupedProgressData.Prophecy.reduce((acc, { totalRange }) => acc + totalRange, 0);
-    const totalOldTestament3 = groupedProgressData.Poetry.reduce((acc, { totalRange }) => acc + totalRange, 0);
-    const totalOld = totalOldTestament1 + totalOldTestament2 + totalOldTestament3;
-    const totalNewTestament = groupedProgressData.Gospels.reduce((acc, { totalRange }) => acc + totalRange, 0) + groupedProgressData.Epistles.reduce((acc, { totalRange }) => acc + totalRange, 0);
-    const totalUnread = 31102 - (totalOld + totalNewTestament); // 31102 is the total number of verses in the Bible
-    console.log("TESTING??", totalOldTestament1, totalOldTestament2, totalOldTestament3);
+    const totalOldTestament = groupedProgressData.History.reduce((acc, { totalRange }) => acc + totalRange, 0) +
+        groupedProgressData.Prophecy.reduce((acc, { totalRange }) => acc + totalRange, 0) +
+        groupedProgressData.Poetry.reduce((acc, { totalRange }) => acc + totalRange, 0);
+
+    const totalNewTestament = groupedProgressData.Gospels.reduce((acc, { totalRange }) => acc + totalRange, 0) +
+        groupedProgressData.Epistles.reduce((acc, { totalRange }) => acc + totalRange, 0);
+
+    const totalUnread = 31102 - (totalOldTestament + totalNewTestament);
+    console.log("TESTING??", totalNewTestament, totalOldTestament, totalUnread);
 
 
     useEffect(() => {
@@ -150,7 +152,6 @@ export const Home = (randomVerse) => {
 
     return (
         <div className='dashboard'>
-            <p>This is Home</p>
             <FaRegLightbulb onClick={() => setShowNav(!showNav)} className="hamburgerMenu" />
             <TopSearchBarMenu />
 
@@ -210,7 +211,11 @@ export const Home = (randomVerse) => {
 
                         <div className='duo-container'>
                             <div className='pie-chart'>
-                                <PieChart />
+                                <PieChart
+                                    maxWidth={550}
+                                    maxHeight={550}
+                                    dataRead={[totalOldTestament, totalNewTestament]}
+                                />
                             </div>
                             <div className='recent-note-container'>
                                 <NotesList userId={userId} notes={notes} deleteNote={deleteNote} />

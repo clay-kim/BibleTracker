@@ -8,7 +8,9 @@ import Notes from './Pages/Notes';
 import Bible from './Pages/Bible';
 import ReadBible from './Pages/ReadBible';
 import KoreanBibleData from './Components/Assets/bibleKOR.json';
-import { getFullBookName } from './Components/BibleUtil.js';
+import EnglishBibleData from './Components/Assets/Bible_EN_Kjv.json';
+
+import { getFullBookName, koreanToEnglishBookNames } from './Components/BibleUtil.js';
 import DailyVerse from './Components/DailyVerse.js';
 
 function App() {
@@ -16,21 +18,20 @@ function App() {
   const [randomVerse, setRandomVerse] = useState(null);
 
   useEffect(() => {
-    // Fetch and set the Bible data when the component mounts
     setRandomVerse(getRandomVerse());
   }, []);
 
   function getRandomVerse() {
-    // Generate a random index to select a book
-    const randomBookIndex = Math.floor(Math.random() * KoreanBibleData.length);
-    const randomBook = KoreanBibleData[randomBookIndex];
-    const fullBookName = getFullBookName(randomBook.abbrev);
+    // Generate a random index
+    const randomBookIndex = Math.floor(Math.random() * EnglishBibleData.length);
+    const randomBook = EnglishBibleData[randomBookIndex];
+    const fullBookName = koreanToEnglishBookNames[getFullBookName(randomBook.abbrev)];
 
-    // Select a random chapter from the selected book
+    // Select a random chapter
     const randomChapterIndex = Math.floor(Math.random() * randomBook.chapters.length);
     const randomChapter = randomBook.chapters[randomChapterIndex];
 
-    // Select a random verse from the selected chapter
+    // Select a random verse
     const randomVerseIndex = Math.floor(Math.random() * randomChapter.length);
     const randomVerse = randomChapter[randomVerseIndex];
 
@@ -38,7 +39,6 @@ function App() {
     const chapterNumber = randomChapterIndex + 1;
     const verseNumber = randomVerseIndex + 1;
 
-    // Return an object containing the verse text, chapter number, and verse number
     return {
       bookAbbreviations: randomBook.abbrev,
       book: fullBookName,

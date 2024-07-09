@@ -5,15 +5,16 @@ import SideBarMenu from '../Components/SideBarMenu';
 import { FaRegLightbulb } from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import KoreanBibleData from '../Components/Assets/bibleKOR.json';
+import EnglishBibleData from '../Components/Assets/Bible_EN_Kjv.json';
 import { useNavigate } from "react-router-dom";
-
+import DailyVerse from '../Components/DailyVerse.js';
 
 export const ReadBible = (randomVerse) => {
     const [showNav, setShowNav] = useState(true);
     const { book, chapter, verse, verseNumber } = randomVerse.randomVerse || {};
     const { bookAbbrev, chapterNumber } = useParams();
     const navigate = useNavigate();
-    const selectedBook = KoreanBibleData.find(book => book.abbrev === bookAbbrev);
+    const selectedBook = EnglishBibleData.find(book => book.abbrev === bookAbbrev);
 
     // State to hold the current chapter number
     const [currentChapter, setCurrentChapter] = useState(parseInt(chapterNumber) || 1);
@@ -54,17 +55,11 @@ export const ReadBible = (randomVerse) => {
 
     return (
         <div className='dashboard'>
-            <p>Reading Verses</p>
             <FaRegLightbulb onClick={() => setShowNav(!showNav)} className="hamburgerMenu" />
             <TopSearchBarMenu />
 
             <div className='homeMain-home'>
-                <div className='daily-bible-verse'>
-                    <p>Daily Word of God</p>
-                    <p>{book} {chapter} : {verseNumber}</p>
-                    <p>"{verse}"</p>
-                    <p>{book} {chapter}장 읽기</p>
-                </div>
+            <DailyVerse randomVerse={randomVerse} />
                 <SideBarMenu show={showNav} />
 
                 <div className='dashboard-container-readBible'>
@@ -81,7 +76,8 @@ export const ReadBible = (randomVerse) => {
 
                     <div className='verse-container'>
                         {currentChapterContent.map((verse, index) => (
-                            <p key={index}> {index + 1}. {verse}</p>
+                            <p key={index}> 
+                            <span className="verse-number">{index + 1}. </span>{verse}</p>
                         ))}
 
                     </div>

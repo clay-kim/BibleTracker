@@ -4,7 +4,7 @@ import TopSearchBarMenu from '../Components/TopSearchBarMenu';
 import SideBarMenu from '../Components/SideBarMenu';
 import { FaRegLightbulb } from "react-icons/fa";
 import DailyVerse from '../Components/DailyVerse';
-import { getFullBookName, bookNames } from '../Components/BibleUtil';
+import { getFullBookName, bookNames, koreanToEnglishBookNames } from '../Components/BibleUtil';
 import KoreanBibleData from '../Components/Assets/bibleKOR.json';
 import NotesList from './NoteList';
 
@@ -164,8 +164,6 @@ export const Notes = (randomVerse) => {
             console.error('Error deleting note:', error);
         }
     };
-
-
     // Generating the list of books from the selected book
     // Tab Menu option
     const chapterOptions = useMemo(() => {
@@ -178,16 +176,12 @@ export const Notes = (randomVerse) => {
 
 
 
-
-
     return (
         <div className='dashboard'>
-
-            <p>This is Notes Page</p>
             <FaRegLightbulb onClick={() => setShowNav(!showNav)} className="hamburgerMenu" />
             <TopSearchBarMenu />
 
-            <div className='homeMain'>
+            <div className='homeMain-notes'>
                 <DailyVerse randomVerse={randomVerse} />
 
                 <SideBarMenu show={showNav} />
@@ -195,10 +189,9 @@ export const Notes = (randomVerse) => {
                 <div className='dashboard-container'>
 
                     <div className='top-container-note'>
-                        <div className='note-t1'>
-                            <h2>Enlightened Reflections</h2>
-                            <h4>Finding Wisdom in Words</h4>
-                        </div>
+                        <div className='title-container'>
+                        <p>Finding Wisdom in Words</p>
+                    </div>
                     </div>
 
                     <div className='bottom-container-note'>
@@ -207,7 +200,7 @@ export const Notes = (randomVerse) => {
                             <div className='note-dropdown-container'>
                                 <div className="note-SearchBar">
                                     <div className="note-announce">
-                                        <h5>말씀 구절 기록을 위하여 해당하는 구절을 표기해주세요.</h5>
+                                        <h5>For recording scripture verses, please indicate the corresponding verses.</h5>
                                     </div>
                                     <div className="note-SearchBox">
                                         <div className="menu-container">
@@ -219,7 +212,7 @@ export const Notes = (randomVerse) => {
                                                 <option value=""></option>
                                                 {bookAbbreviations.map((bookAbbrev) => (
                                                     <option key={bookAbbrev} value={bookAbbrev}>
-                                                        {getFullBookName(bookAbbrev)}
+                                                        {koreanToEnglishBookNames[getFullBookName(bookAbbrev)]}
                                                     </option>
                                                 ))}
                                             </select>
@@ -235,7 +228,7 @@ export const Notes = (randomVerse) => {
                                                 <option value=""></option>
                                                 {chapterOptions.map((chapters) => (
                                                     <option key={chapters.value} value={chapters.value}>
-                                                        {chapters.label}장
+                                                        {chapters.label}
                                                     </option>
                                                 ))}
                                             </select>

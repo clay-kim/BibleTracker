@@ -11,9 +11,7 @@
     cursor: pointer;
 }
 
-.hamburgerMenu :hover {
-    color: rgba(46, 198, 241, 0.69);
-}
+
 
 .hamburgerMenu:active {
     color: #9e54e9c1;
@@ -22,10 +20,9 @@
 
 }
 
-
 .dashboard-container-readBible {
     width: 100%;
-    background-color: #11052be0;
+    background-color: #09522154;
     display: flex;
     flex-direction: column;
     border-radius: 0 0 18px 0;
@@ -40,7 +37,7 @@
     border-radius: 0 0 18px 18px;
     display: flex;
     flex-direction: row;
-    background-color: #27214e9f;
+    background-color: #05782bd0;
 }
 
 .selectedBible {
@@ -114,18 +111,23 @@
 
 .verse-container {
     display: flex;
-    width: 95%;
-    height: 90%;
+    width: 90%;
+    height: 70%;
     overflow-y: auto;
     flex-direction: column;
-    margin-top: 20px;
+    padding: 10px;
+    background-color:  #0a052b85;;
 }
 
 .verse-container p {
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(255, 245, 194);
     margin-bottom: 8px;
+}
 
+.verse-number{
+    font-weight: 100;
+    color: #8a8a8a;
 }
 
 

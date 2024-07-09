@@ -16,11 +16,11 @@ export const DailyVerse = (randomVerse) => {
 
     return (
         <div className='daily-bible-verse'>
-            <p>Daily Word of God</p>
+            <p className='title_top'>Daily Word of God</p>
             <p>{book} {chapter} : {verseNumber}</p>
             <p>"{verse}"</p>
-            <p> Go to</p>
-            <h4 className='readMore' onClick= {handleSearch} >{bookEng} Chapter {chapter}</h4>
+            <p> Read more</p>
+            <h4 className='readMore' onClick= {handleSearch} >{bookEng} {chapter}</h4>
         </div>
 
     )

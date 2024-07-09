@@ -11,13 +11,13 @@ const Utils = {
     }
 };
 
-const PieChart = ({ maxWidth = 550, maxHeight = 550 }) => {
+const PieChart = ({ maxWidth = 550, maxHeight = 550, dataRead = [0, 0, 0]}) => {
     const data = {
         labels: ['Old Testament', 'New Testament', 'Unread'],
         datasets: [
             {
                 label: 'Bible Reading Progress',
-                data: [220,144, 3000],
+                data: dataRead,
                 backgroundColor: [
                     Utils.CHART_COLORS.oldTestament,
                     Utils.CHART_COLORS.newTestament,

@@ -1,20 +1,16 @@
+
+
 .hamburgerMenu {
-    position: absolute;
-    color: aliceblue;
+    color: rgba(13, 162, 255, 0.678);
+    margin-left: 200px;
     font-size: 25px;
-    margin: 15px 0 0 195px;
-    cursor: pointer;
 }
 
-.hamburgerMenu :hover {
-    color: rgba(255, 205, 22, 0.894);
+.hamburgerMenu:hover {
+    color: #e3f86f;
+    transform: rotate(200deg);
 }
 
-.hamburgerMenu:active {
-    color: #9e54e9c1;
-    box-shadow: 0 5px #666;
-    transform: translateY(3px);
-}
 
 .homeMain-home {
     width: 90vw;
@@ -24,7 +20,6 @@
     display: flex;
     flex-direction: row;
     background-color: #27214e9f;
-    border: 2px solid #f0ff4700;
 }
 
 .dashboard-container-home {
@@ -36,13 +31,13 @@
 }
 
 .title-container {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    padding: 16px;
 }
 
 .chart-group {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .chart-container {
