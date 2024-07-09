@@ -116,6 +116,8 @@ export const LoginForm = () => {
 
                 <div className="form-box login">
                     <h1>Login</h1>
+                    <p className="demoUser">User Email: demoUser@email.com</p>
+                    <p className="demoUser">Password: demo1234</p>
                     <div className="message">{message}</div>
                     <form onSubmit={handleLogin}>
                         <div className="input-box">

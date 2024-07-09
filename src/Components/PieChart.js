@@ -5,15 +5,14 @@ Chart.register(ArcElement, Tooltip, Legend);
 
 const Utils = {
     CHART_COLORS: {
-        oldTestament: 'rgb(14, 234, 255, 0.7)',
-        newTestament: 'rgb(245, 235, 103, 0.7)',
-        unread: 'rgba(55, 67, 50, 0.7)'
+        oldTestament: 'rgb(2, 136, 209, 0.7)',
+        newTestament: 'rgb(255, 82, 82, 0.8)'
     }
 };
 
 const PieChart = ({ maxWidth = 550, maxHeight = 550, dataRead = [0, 0, 0]}) => {
     const data = {
-        labels: ['Old Testament', 'New Testament', 'Unread'],
+        labels: ['Old Testament', 'New Testament'],
         datasets: [
             {
                 label: 'Bible Reading Progress',
@@ -21,7 +20,6 @@ const PieChart = ({ maxWidth = 550, maxHeight = 550, dataRead = [0, 0, 0]}) => {
                 backgroundColor: [
                     Utils.CHART_COLORS.oldTestament,
                     Utils.CHART_COLORS.newTestament,
-                    Utils.CHART_COLORS.unread
                 ],
             }
         ]
