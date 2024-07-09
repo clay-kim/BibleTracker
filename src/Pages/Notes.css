@@ -1,0 +1,217 @@
+
+.homeMain-notes {
+    width: 90vw;
+    height: 80vh;
+    padding: 0px;
+    border-radius: 0 0 18px 18px;
+    display: flex;
+    flex-direction: row;
+    background-color: #27214e9f;
+}
+
+.dashboard-container {
+    width: 100%;
+    background-color: #05782b20;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 18px 0;
+}
+
+.top-container-note {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.note-t1 {
+    width: 100%;
+    h4 {
+        font-size: 24px;
+        color: #ffe6fd9b;
+        text-align: center;
+        font-weight: 100;
+    }
+}
+
+.note-t1 h2{
+    color: #131a0edf;
+    text-shadow: 0px 2px 1px rgba(224, 246, 57, 0.194);
+    font-size: 54px;
+    font-weight: 100;
+    margin-left: 20px;
+}
+
+
+.bottom-container-note {
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+
+/*
+==============  > LEFT SIDE
+*/
+
+
+.note-container-left {
+    border-radius: 18px;
+    width: 45%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-dropdown-container {
+    border: 2px solid #d0725800;
+    height: 70%;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.note-input-container {
+    padding: 5px;
+    border: 2px solid #e8f2d4ac;
+    width: 60%;
+    height: 55%;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.758);
+
+}
+
+.inputBox {
+    width: 80px;
+    border-radius: 25px;
+    margin-left: 5px;
+    height: 25px;
+    text-align: center;
+    background-color: #7bc8aa86;
+    color: rgb(255, 240, 240);
+    border: none;
+    cursor: pointer;
+}
+.inputBox:hover {
+    background-color: #79fbdeba
+}
+
+::placeholder {
+    color: rgb(255, 240, 240);
+    opacity: 0.3;
+    /* Firefox */
+}
+
+.note-announce {
+    border-bottom: 1px solid #ffffffd1;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.note-SearchBox {
+    background-color: #f0ff4700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 500px;
+    width: 100%;
+}
+
+.note-SearchBar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #7066f600;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    ;
+
+    h5 {
+        color: rgba(169, 223, 205, 0.458);
+        text-shadow: 0px 0px .6px rgba(250, 250, 39, 0.555);
+    }
+
+    h6 {
+        font-size: 14px;
+        text-align: left;
+        color: rgba(245, 195, 221, 0.915);
+
+    }
+}
+
+
+
+.menu-container {
+    background-color: #be393900;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.note-SearchButton {
+    width: 80px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: rgba(90, 201, 142, 0.617);
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: rgba(3, 91, 223, 0.838);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.note-SearchButton:hover {
+    background-color: #79fbdeba
+}
+
+
+.note-input-container {
+    display: block;
+    background-color: #03121ab9;
+    border-radius: 10px;
+    border: 2px solid #c6b8d5cc;
+    height: 300px;
+    margin-top: 50px;
+}
+
+
+.inputField {
+    width: 100%;
+    height: 260px;
+    border-radius: 7px;
+    background: transparent;
+    color: white;
+    border: 1px solid #b3fefe8e;
+    padding: 10px;
+}
+
+
+.charCount {
+    color: #adbfeeb4;
+    font-size: 12px;
+}
+
+/*
+==============  > RIGHT SIDE
+*/
+
+
+
+.noteList-container {
+    background-color: rgba(5, 1, 16, 0.361);
+    display: flex;
+    border-radius: 10px;
+    width: 40%;
+    max-height: 450px;
+    overflow: auto;
+    scrollbar-color: rgba(5, 92, 82, 0.85) rgba(21, 36, 73, 0.36);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}

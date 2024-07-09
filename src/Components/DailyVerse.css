@@ -1,0 +1,29 @@
+.readMore{
+    font-size: 16px;
+    color: rgba(37, 213, 228, 0.766);
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(246, 254, 206);
+}
+
+.daily-bible-verse {
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+
+    p {
+        font-size: 16px;
+        color: rgb(246, 254, 206);
+        margin-bottom: 20px;
+        padding: 0px;
+    }
+
+    .title_top{
+        color: rgb(243, 232, 83);
+    }
+}
