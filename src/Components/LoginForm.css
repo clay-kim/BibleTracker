@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -20,7 +13,6 @@ body {
     min-height: 100vh;
     background: url('./Assets/background.jpeg') no-repeat;
     background-size: cover;
-
 }
 
 
@@ -39,6 +31,11 @@ body {
     overflow: hidden;
 }
 
+.demoUser{
+    color: rgb(184, 211, 87);
+    font-size: 12px;
+    text-align: center;
+}
 
 .wrapper h1 {
     font-size: 36px;

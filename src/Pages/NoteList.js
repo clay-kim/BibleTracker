@@ -107,7 +107,7 @@ const NotesList = ({ userId, deleteNote }) => {
                 {selectedNote && (
                     <div className='modal-window'>
                         <div className="button-container">
-                            <h2>{getFullBookNameEng(getFullBookName(selectedNote[2]))} {selectedNote[3]}장 {selectedNote[4]} - {selectedNote[5]}절</h2>
+                            <h2>{getFullBookNameEng(getFullBookName(selectedNote[2]))} {selectedNote[3]}: {selectedNote[4]} - {selectedNote[5]}</h2>
                             <button className="modal-button" onClick={closeModal}>Close</button>
                         </div>
                         <p>{selectedNote[6]}</p>
